@@ -1,0 +1,254 @@
+/* Halaman Login / Signup — semua selector di-scope ke .auth-page supaya tidak bentrok dengan style situs */
+.auth-page,
+.auth-page *,
+.auth-page *::before,
+.auth-page *::after {
+  box-sizing: border-box;
+}
+
+.auth-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+}
+
+.auth-page .form {
+  width: 100%;
+  max-width: 430px;
+  padding: 30px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.auth-page .auth-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #232836;
+  text-align: center;
+}
+
+.auth-page form {
+  margin-top: 30px;
+}
+
+.auth-page .field-wrap {
+  margin-top: 20px;
+}
+
+.auth-page .field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+}
+.auth-page .field-wrap .field {
+  margin-top: 0;
+}
+.auth-page .button-field,
+.auth-page .media-options .field {
+  margin-top: 20px;
+}
+
+.auth-page .field input,
+.auth-page .field button[type="submit"] {
+  height: 100%;
+  width: 100%;
+  border: none;
+  /* 16px = mencegah iOS memperbesar layar saat input difokuskan */
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.auth-page .field input {
+  outline: none;
+  padding: 0 15px;
+  border: 1px solid #cacaca;
+}
+.auth-page .input-field input {
+  padding-right: 48px;
+}
+.auth-page .field input:focus {
+  border-color: #0171d3;
+  border-bottom-width: 2px;
+}
+.auth-page .field.has-error input {
+  border-color: #d93025;
+}
+
+.auth-page .eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8b8b8b;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.auth-page .eye-icon:hover {
+  color: #232836;
+}
+
+.auth-page .field-error {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #d93025;
+}
+
+.auth-page .hint {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #8b8b8b;
+}
+
+.auth-page .banner {
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.auth-page .banner.error {
+  background: #fdecea;
+  color: #b3261e;
+}
+.auth-page .banner.info {
+  background: #e8f1fb;
+  color: #0b4f9c;
+}
+
+.auth-page .field button[type="submit"] {
+  color: #fff;
+  background-color: #0171d3;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.auth-page .field button[type="submit"]:hover:not(:disabled) {
+  background-color: #000;
+}
+.auth-page .field button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.auth-page .form-link {
+  text-align: center;
+  margin-top: 10px;
+}
+.auth-page .form-link span,
+.auth-page .form-link a,
+.auth-page .link-btn {
+  font-size: 14px;
+  font-weight: 400;
+  color: #232836;
+}
+.auth-page .form a,
+.auth-page .link-btn {
+  color: #0171d3;
+  text-decoration: none;
+}
+.auth-page .form-content a:hover,
+.auth-page .link-btn:hover {
+  text-decoration: underline;
+}
+.auth-page .link-btn {
+  background: none;
+  border: 0;
+  padding: 8px 4px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.auth-page .line {
+  position: relative;
+  height: 1px;
+  width: 100%;
+  margin: 36px 0;
+  background-color: #d4d4d4;
+}
+.auth-page .line::before {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  color: #8b8b8b;
+  padding: 0 15px;
+}
+
+/* Tombol sosial & Home */
+.auth-page .social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 44px;
+}
+.auth-page .social-icon,
+.auth-page .social-img {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+}
+.auth-page .social-img {
+  height: 20px;
+  width: 20px;
+  object-fit: cover;
+}
+.auth-page .social-icon {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #0171d3;
+}
+.auth-page .social.facebook {
+  color: #fff;
+  background-color: #4267b2;
+}
+.auth-page .social.google {
+  background: #fff;
+  border: 1px solid #cacaca;
+}
+.auth-page .social.google span {
+  font-weight: 500;
+  opacity: 0.6;
+  color: #232836;
+}
+.auth-page .social.Wekidi {
+  color: #fff;
+  background-color: #d8af1c;
+}
+
+@media (max-width: 400px) {
+  .auth-page { padding-left: 10px; padding-right: 10px; }
+  .auth-page .form { padding: 22px 16px; }
+  .auth-page .social { font-size: 15px; }
+}
+
+/* Layar sangat pendek (HP landscape): kartu boleh menempel ke atas & di-scroll */
+@media (max-height: 640px) {
+  .auth-page { align-items: flex-start; }
+}
