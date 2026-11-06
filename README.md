@@ -89,6 +89,7 @@ src/
 
 Hasil build (`dist/`) adalah situs statis, jadi bisa dipasang di Netlify, Vercel, Cloudflare Pages, atau GitHub Pages.
 
+- **Netlify:** sudah ada `netlify.toml` (build command `npm run build`, publish directory `dist`, dan pengalihan ke `index.html`), jadi tidak perlu mengisi pengaturan build manual.
 - **Di sub-folder** (misalnya GitHub Pages `https://username.github.io/nama-repo/`): ubah `base` di `vite.config.ts` menjadi `"/nama-repo/"`. Router, manifest, dan service worker ikut menyesuaikan.
 - **GitHub Pages:** salin `dist/index.html` menjadi `dist/404.html` supaya alamat seperti `/menu` tidak error saat dimuat ulang.
 
